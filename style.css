@@ -506,7 +506,7 @@ img {
   font-size: 0.95rem;
 }
 .contact-form textarea {
-  min-height: 140px;
+  min-height: 100px;
   resize: vertical;
 }
 .contact-cards {
