@@ -396,7 +396,6 @@
             Fill out the form and we’ll get back within one business day.
           </p>
         </div>
-        <!-- <form class="contact-form" action="contact_submit.php" method="post"> -->
         <form
           id="contact-form"
           class="contact-form"
@@ -412,13 +411,12 @@
               required
             />
           </div>
-          <select name="budget">
-            <option value="">Estimated budget…</option>
-            <option value="<2k">&lt;$2k</option>
-            <option value="2k-5k">$2k–$5k</option>
-            <option value="5k-10k">$5k–$10k</option>
-            <option value=">10k">&gt;$10k</option>
-          </select>
+          <textarea
+            name="budget"
+            placeholder="Your estimated budget…"
+            required
+          ></textarea>
+
           <textarea
             name="message"
             placeholder="Tell us about your goals, timeline, and must-haves."
