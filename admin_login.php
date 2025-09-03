@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $password = $_POST['password'] ?? '';
 
     // Hardcoded credentials (you can hash passwords later)
-    if ($username === "Sara" && $password === "Nirvana.87") {
+    if ($username === "Admin" && $password === "Adminpass.24") {
         $_SESSION['admin_logged_in'] = true;
         header("Location: admin_dashboard.php");
         exit;
