@@ -40,7 +40,7 @@ while($row = $result->fetch_assoc()){
     <td>{$row['budget']}</td>
     <td>{$row['message']}</td>
     <td>{$row['created_at']}</td>
-    <td><a class='delete' href='delete.php?type=contact&id={$row['id']}' onclick='return confirm(\"Are you sure?\")'>Delete</a></td>
+    <td><a class='delete' href='delete.php?id={$row['id']}&table=contact_messages' onclick='return confirm(\"Are you sure?\")'>Delete</a></td>
     </tr>";
 }
 ?>
@@ -58,7 +58,7 @@ while($row = $result->fetch_assoc()){
     <td>{$row['id']}</td>
     <td>{$row['email']}</td>
     <td>{$row['created_at']}</td>
-    <td><a class='delete' href='delete.php?type=subscriber&id={$row['id']}' onclick='return confirm(\"Are you sure?\")'>Delete</a></td>
+    <td><a class='delete' href='delete.php?id={$row['id']}&table=newsletter_subscribers' onclick='return confirm(\"Are you sure?\")'>Delete</a></td>
     </tr>";
 }
 ?>
