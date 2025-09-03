@@ -20,7 +20,7 @@
           <a href="#process">Process</a>
           <a href="#pricing">Pricing</a>
           <a href="#faq">FAQ</a>
-          <a href="#contact" class="btn">Get a Quote</a>
+          <a href="#contact" class="btn">Contact Us!</a>
         </nav>
       </div>
     </header>
@@ -43,7 +43,6 @@
             ⭐ 5.0 rating • 100% responsive • Core Web Vitals optimized
           </div>
         </div>
-
         <div class="hero-cards">
           <div class="feature-card">
             <div class="feature-icon">🎨</div>
@@ -90,8 +89,8 @@
             tailored to your business goals.
           </p>
         </div>
-
         <div class="grid grid-3">
+          <!-- UI/UX -->
           <div class="card">
             <div class="pill">🎨</div>
             <h3>UI/UX Design</h3>
@@ -105,7 +104,7 @@
               <li>Accessibility (WCAG)</li>
             </ul>
           </div>
-
+          <!-- Websites -->
           <div class="card">
             <div class="pill">🌐</div>
             <h3>Websites & Landing Pages</h3>
@@ -116,7 +115,7 @@
               <li>Analytics & A/B testing</li>
             </ul>
           </div>
-
+          <!-- Apps -->
           <div class="card">
             <div class="pill">💻</div>
             <h3>Apps & Dashboards</h3>
@@ -127,7 +126,7 @@
               <li>Testing & CI</li>
             </ul>
           </div>
-
+          <!-- Performance -->
           <div class="card">
             <div class="pill">🚀</div>
             <h3>Performance & SEO</h3>
@@ -140,7 +139,7 @@
               <li>Meta & sitemap</li>
             </ul>
           </div>
-
+          <!-- E-commerce -->
           <div class="card">
             <div class="pill">🛒</div>
             <h3>E-commerce</h3>
@@ -151,7 +150,7 @@
               <li>CRM/Email flows</li>
             </ul>
           </div>
-
+          <!-- Brand -->
           <div class="card">
             <div class="pill">✨</div>
             <h3>Brand & Assets</h3>
@@ -166,7 +165,7 @@
       </div>
     </section>
 
-    <!-- Work -->
+    <!-- Work Section -->
     <section id="work" class="section">
       <div class="container">
         <div class="section-head">
@@ -213,54 +212,18 @@
               </div>
             </div>
           </div>
-          <div class="project">
-            <img
-              src="https://picsum.photos/seed/pixelforge-4/800/600"
-              alt="Project 4"
-            />
-            <div class="project-overlay">
-              <div class="project-meta">
-                <a href="#">Case Study</a>
-                <div class="title">Project 4</div>
-              </div>
-            </div>
-          </div>
-          <div class="project">
-            <img
-              src="https://picsum.photos/seed/pixelforge-5/800/600"
-              alt="Project 5"
-            />
-            <div class="project-overlay">
-              <div class="project-meta">
-                <a href="#">Case Study</a>
-                <div class="title">Project 5</div>
-              </div>
-            </div>
-          </div>
-          <div class="project">
-            <img
-              src="https://picsum.photos/seed/pixelforge-6/800/600"
-              alt="Project 6"
-            />
-            <div class="project-overlay">
-              <div class="project-meta">
-                <a href="#">Case Study</a>
-                <div class="title">Project 6</div>
-              </div>
-            </div>
-          </div>
+          <!-- Add more projects as needed -->
         </div>
       </div>
     </section>
 
-    <!-- Process -->
+    <!-- Process Section -->
     <section id="process" class="section">
       <div class="container">
         <div class="section-head">
           <span class="eyebrow">How we work</span>
           <h2>A transparent, collaborative process</h2>
         </div>
-
         <div class="grid grid-4 process-grid">
           <div class="card">
             <div class="step">1</div>
@@ -423,7 +386,7 @@
       </div>
     </section>
 
-    <!-- Contact -->
+    <!-- Contact Section -->
     <section id="contact" class="section">
       <div class="container contact">
         <div class="section-head">
@@ -433,24 +396,36 @@
             Fill out the form and we’ll get back within one business day.
           </p>
         </div>
-
-        <form class="contact-form">
+        <!-- <form class="contact-form" action="contact_submit.php" method="post"> -->
+        <form
+          id="contact-form"
+          class="contact-form"
+          action="contact_submit.php"
+          method="post"
+        >
           <div class="form-row">
-            <input type="text" placeholder="Your name" required />
-            <input type="email" placeholder="you@example.com" required />
+            <input type="text" name="name" placeholder="Your name" required />
+            <input
+              type="email"
+              name="email"
+              placeholder="you@example.com"
+              required
+            />
           </div>
-          <select>
+          <select name="budget">
             <option value="">Estimated budget…</option>
-            <option>&lt;$2k</option>
-            <option>$2k–$5k</option>
-            <option>$5k–$10k</option>
-            <option>&gt;$10k</option>
+            <option value="<2k">&lt;$2k</option>
+            <option value="2k-5k">$2k–$5k</option>
+            <option value="5k-10k">$5k–$10k</option>
+            <option value=">10k">&gt;$10k</option>
           </select>
           <textarea
+            name="message"
             placeholder="Tell us about your goals, timeline, and must-haves."
             required
           ></textarea>
           <button type="submit" class="btn block">Send message</button>
+          <div id="contact-response"></div>
         </form>
 
         <div class="contact-cards">
@@ -458,14 +433,14 @@
             <div class="contact-icon">📞</div>
             <div>
               <div class="contact-title">Call</div>
-              <a href="tel:+3550000000" class="muted">+355 69 357 5102</a>
+              <a class="muted">+355 69 357 5102</a>
             </div>
           </div>
           <div class="contact-card">
-            <div class="contact-icon">✉️</div>
+            <div class="contact-icon">✉</div>
             <div>
               <div class="contact-title">Email</div>
-              <a href="mailto:hello@pixelforge.example" class="muted"
+              <a href="mailto:pojakusara@gmail.com" class="muted"
                 >pojakusara@gmail.com</a
               >
             </div>
@@ -478,6 +453,17 @@
             </div>
           </div>
         </div>
+
+        <!-- Newsletter -->
+        <form
+          id="newsletter-form"
+          class="contact-form"
+          action="subscribe.php"
+          method="post"
+        >
+          <input type="email" name="email" placeholder="Your Email" required />
+          <button type="submit" class="btn block">Subscribe</button>
+        </form>
       </div>
     </section>
 
@@ -495,5 +481,7 @@
         </div>
       </div>
     </footer>
+
+    <script src="script.js"></script>
   </body>
 </html>
