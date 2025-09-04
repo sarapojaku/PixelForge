@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <style>
 body{font-family:sans-serif; display:flex; justify-content:center; align-items:center; height:100vh; background:#f3f4f6;}
 form{background:#fff; padding:2rem; border-radius:12px; box-shadow:0 8px 20px rgba(0,0,0,0.1);}
-input{display:block; width:100%; padding:0.7rem; margin-bottom:1rem; border-radius:8px; border:1px solid #ddd;}
+input{display:block; padding:0.7rem; margin-bottom:1rem; border-radius:8px; border:1px solid #ddd;}
 button{padding:0.7rem 1.5rem; background:#2563eb; color:#fff; border:none; border-radius:8px; cursor:pointer; margin-left: 50px;}
 .message{color:red; margin-bottom:1rem;}
 </style>
