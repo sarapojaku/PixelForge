@@ -29,13 +29,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $mail->isSMTP();
             $mail->Host = 'smtp.gmail.com';
             $mail->SMTPAuth = true;
-            $mail->Username = 'pojakusara@gmail.com';
-            $mail->Password = 'kxnxpezhrshioqmx';
+            $mail->Username = 'websitespixelforge@gmail.com';
+            $mail->Password = 'hylqxxkbkczvzhkg';
             $mail->SMTPSecure = 'tls';
             $mail->Port = 587;
 
-            $mail->setFrom('pojakusara@gmail.com', 'PixelForge');
-            $mail->addAddress('pojakusara@gmail.com', 'Sara Pojaku');
+            $mail->setFrom('websitespixelforge@gmail.com', 'PixelForge');
+            $mail->addAddress('websitespixelforge@gmail.com', 'Sara Pojaku');
 
             $mail->isHTML(true);
             $mail->Subject = 'New Contact Form Submission';
@@ -45,20 +45,35 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                            <b>Message:</b> $message";
 
             $mail->send();
+            
+            // Thank-you email to sender
+            $mail2 = new PHPMailer(true);
+            $mail2->isSMTP();
+            $mail2->SMTPAuth = true;
+            $mail2->Host = 'smtp.gmail.com';
+            $mail2->Password = 'hylqxxkbkczvzhkg';
+            $mail2->Username = 'websitespixelforge@gmail.com';
+            $mail2->SMTPSecure = 'tls';
+            $mail2->Port = 587;
+            
+            $mail2->setFrom('websitespixelforge@gmail.com', 'PixelForge');
+            $mail2->addAddress($contact); // corrected
+            $mail2->isHTML(true);
+            $mail2->Subject = "Thank you for contacting PixelForge!";
+            $mail2->Body = "Hello $name,<br><br>Thank you for reaching out! We received your message and will get back to you soon.<br><br>Best regards,<br>PixelForge Team";
+            $mail2->send();
+            echo json_encode(["status" => "success", "message" => "Message sent successfully! Emails delivered."]);
 
         } catch (Exception $e) {
-            // continue even if email fails
+            echo json_encode(["status" => "success", "message" => "Message saved but email failed: {$mail->ErrorInfo}"]);
         }
 
-        echo json_encode(["status" => "success", "message" => "Message sent successfully!"]);
     } else {
-        echo json_encode(["status" => "error", "message" => "Error: " . $stmt->error]);
+        echo json_encode(["status" => "error", "message" => "Error saving message: {$conn->error}"]);
     }
 
     $stmt->close();
-} else {
-    echo json_encode(["status" => "error", "message" => "Invalid request."]);
 }
-
 $conn->close();
 ?>
+
